@@ -201,3 +201,19 @@ hr{
 .resultat{
     margin-left:8em;
 }
+
+/* Version petit ecran */
+
+@media only screen and (max-width:1600px){
+    /* Modification de la position de textarea/bouton au milieu, alignement du commentaire entre le textarea et le bouton*/
+}
+
+@media only screen and (max-width:1300px){
+    /* Modification de la position de textarea au milieu, alignement du commentaire entre le textarea et le bouton*/
+    /* Reduction des bandes */
+}
+
+@media only screen and (max-width:600px){
+    /* taille de l'image en % 
+    textarea en pourcentage*/
+}
