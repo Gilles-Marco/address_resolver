@@ -21,7 +21,7 @@ app.get("/", function(req, res){
     res.header(200);
     res.sendFile(__dirname+"/help.css");
 })
-.get('/images/warning.svg', function(req, sys){
+.get('/images/warning.svg', function(req, res){
     res.header(200);
     res.sendFile(__dirname+"/images/warning.svg");
 });
