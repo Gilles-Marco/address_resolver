@@ -4,7 +4,7 @@
     <head>
         <title> Adresse Resolver </title>
         <meta charset="UTF-8">
-        <link href="https://fonts.googleapis.com/css?family=Alegreya|Open+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Alegreya|Gloria+Hallelujah|Open+Sans" rel="stylesheet">
 
         <link rel="stylesheet" type="text/css" href="style.css"/>
     </head>
@@ -13,33 +13,28 @@
         <div class="bandeau">
             <h1>Adress resolver</h1>
         </div>
-        <a href="/help.html" id="help">Get Help !</a>
+        <div class="bande_gauche"></div>
+        <div class="bande_droite"></div>
+        <a href="help.html" id="help">Get Help !</a>
 
-            <form action="javascript:void(0)" method="post" id="adresse_resolver">
-                <label>Adresse</label><br/>
-                <input type="text" class="input_text" id="adresse1"/><br/>
-                <input type="submit" value="Solve it !" id="adresse1_submit"/>
-            </form>
+        <form action="javascript:void(0)" method="post" id="dump">
+            <label>Dump your adress here</label><br/>
+            <textarea class="input_text" id="dump_adress" autofocus required rows="5" cols="40"/></textarea><br/>
+            <input type="submit" value="Get the Dump" id="dump_button"/>
+        </form>
 
-            <div id="adresse"></div>
-            <div id="net_id"></div>
-            <div id="adresse_reseau"></div>
-            <div id="adress_broadcast"></div>
-            <div id="plage_adress"></div>
-            <div id="masque"></div>
-            <div id="adress_type"></div>
-            <div id="adress_bit"></div>
-            <div id="special_message"></div>
+        <div class="comment_holder">
+            <img class="warning" src="images/warning.svg" height="100px" width="auto"/><br/>
+            <label class="comment" id="normal"> : 192.168.0.0</label><br/>
+            <label class="comment" id="withNetid"> : 192.168.0.0/24</label><br/>
+            <label class="comment">Separate adress with comma</label>
+        </div>
 
-            <form action="javascript:void(0)" method="post" id="dump">
-                <label>Dump your adress here</label><br/>
-                <input type="text" class="input_text" id="dump_adress"/><br/>
-                <input type="submit" value="Get the Dump" id="dump_button"/>
-            </form>
+        <hr/>
 
-            <div id="dump_area">
+        <div id="dump_area">
 
-            </div>
+        </div>
 
         <script src="adress_resolver.js"></script>
     </body>

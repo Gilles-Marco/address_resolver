@@ -1,3 +1,5 @@
+/* General */
+
 *{
     padding:0;
     margin:0;
@@ -15,14 +17,39 @@ h1{
     padding-top:15px;
 }
 
+/* Header + border */
+
 .bandeau{
     position:relative;
     background-color:#1E88E5;
     height:80px;
     width:100%;
     color:white;
-    box-shadow: -1px 3px 16px 1px #9E9E9E;
+    box-shadow: -1px 1px 5px 1px #9E9E9E;
+    z-index:1;
 }
+
+.bande_gauche{
+    position:absolute;
+    background-color:#1565C0;
+    top:80px;
+    left:0;
+    width:15%;
+    height:100%;
+    box-shadow:2px -1px 5px 1px #9E9E9E;
+}
+
+.bande_droite{
+    position:absolute;
+    background-color:#1565C0;
+    top:80px;
+    right:0;
+    width:15%;
+    height:100%;
+    box-shadow:-2px -1px 5px 1px #9E9E9E;
+}
+
+/* Get help button */
 
  #help{
      position:absolute;
@@ -41,6 +68,8 @@ h1{
      font-size:1.25em;
      box-shadow:inset 0px 0px 4px 1px #757575;
      border-radius:4px;
+
+     z-index:2;
  }
 
  #help:hover{
@@ -51,29 +80,23 @@ h1{
     box-shadow: inset 0px 0px 6px 3px #757575;
  }
 
+/* Form */
+
 form{
-    margin-top:5%;
     border-radius:10px;
     width:425px;
-    background-color:#90CAF9;
     padding:1em;
-    box-shadow: 1px 4px 12px 3px #616161;
     text-align:center;
 }
 
-#adresse_resolver{
-    position:absolute;
-    left:20%;
-}
-
 #dump{
-    position:absolute;
-    right:20%;
+    position:sticky;
+    left:20%;
+    z-index:2;
 }
 
 form label{
     font-family: "Alegreya";
-    color:white;
     font-weight: bold;
     font-size:1.5em;
     text-align:center;
@@ -83,7 +106,60 @@ form br{
     line-height: 2.5em;
 }
 
+textarea{
+    box-shadow: inset 0px 0px 3px 1px #757575;
+    border-radius:4px;
+    padding: 5px;
+}
+
+textarea:hover{
+
+}
+
+textarea:focus{
+
+}
+
 input{
     border-radius:3px;
     border:none;
+    width:150px;
+    height:50px;
+    font-size: 1.25em;
+}
+
+hr{
+    width:65%;
+    margin:0 auto;
+    margin-top:25px;
+}
+
+/* Comment to help the user */
+
+.comment_holder{
+    position:absolute;
+    right:30%;
+    top:6%;
+    z-index:3;
+}
+
+.comment{
+    font-family: "Gloria Hallelujah";
+    color:#9E9E9E;
+    font-style:italic;
+}
+
+#normal:before{
+    content:'Adress '
+}
+
+#withNetid:before{
+    content:'Adress/<Net-Id> ';
+}
+
+.warning{
+    position:relative;
+    left:-120px;
+    top:100px;
+
 }

@@ -268,33 +268,6 @@ function sameNetwork(adresse1, adresse2){
     return false;
 }
 
-document.getElementById('adresse1_submit').onclick = function(){
-    var adresse = document.getElementById('adresse1').value.split("/")[0];
-
-    var result = resolveAdress(adresse);
-    
-    adresse = result.adress;
-    var plage1 = result.plage1;
-    var plage2 = result.plage2;
-    var masque = result.masque;
-    var adresse_reseau = result.adresse_reseau;
-    var adresse_broadcast = result.adresse_broadcast;
-    var classe = result.classe;
-    var adresse_bit = result.adresse_bit;
-    
-    /*On affiche sur la page les informations calculés */
-    if(classe=='E'){
-        //Affiche un message special
-        document.getElementById('special_message').innerHTML =+ "<p>Une IP de classe E... ce n'est pas habituel ! Peut-être une erreur...</p>"
-    }
-    document.getElementById('plage_adress').innerHTML = "<label>Plage d'adresses : ["+plage1+";"+plage2+"]</label>";
-    document.getElementById('masque').innerHTML = "<label>Masque : "+masque+"</label>";
-    document.getElementById('adresse_reseau').innerHTML = "<label>Adresse réseau : "+adresse_reseau+"</label>";
-    document.getElementById('adress_broadcast').innerHTML = "<label>Adresse broadcast : "+adresse_broadcast+"</label>";
-    document.getElementById('adress_bit').innerHTML = "<label>Adresse binaire : "+adresse_bit+"</label>";
-    document.getElementById('adress_type').innerHTML = "<label>Classe : "+classe+"</label>"
-};
-
 document.getElementById('dump_button').onclick = function(){
     /* reset de l'affichage s'il y a eu une autre demande avant */
     document.getElementById('dump_area').innerHTML = "";
