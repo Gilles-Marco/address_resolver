@@ -1,8 +1,89 @@
 *{
-    margin:0;
     padding:0;
+    margin:0;
 }
-h1 {
-    text-align: center;
 
+body{
+    margin: 0 auto;
+    font-family : "Open Sans";
+}
+
+h1{
+    position:static;
+    text-align:center;
+    font-family: "Alegreya";
+    padding-top:15px;
+}
+
+.bandeau{
+    position:relative;
+    background-color:#1E88E5;
+    height:80px;
+    width:100%;
+    color:white;
+    box-shadow: -1px 3px 16px 1px #9E9E9E;
+}
+
+ #help{
+     position:absolute;
+     top:10px;
+     right:10px;
+
+     border:none;
+     background-color:#82B1FF;
+     font-weight: bold;
+     text-decoration: none;
+     color:white;
+     padding-top:0.75em;
+     height:2.25em;
+     width:6em;
+     text-align:center;
+     font-size:1.25em;
+     box-shadow:inset 0px 0px 4px 1px #757575;
+     border-radius:4px;
+ }
+
+ #help:hover{
+     box-shadow: inset 0px 0px 6px 2px #757575;
+ }
+
+ #help:active{
+    box-shadow: inset 0px 0px 6px 3px #757575;
+ }
+
+form{
+    margin-top:5%;
+    border-radius:10px;
+    width:425px;
+    background-color:#90CAF9;
+    padding:1em;
+    box-shadow: 1px 4px 12px 3px #616161;
+    text-align:center;
+}
+
+#adresse_resolver{
+    position:absolute;
+    left:20%;
+}
+
+#dump{
+    position:absolute;
+    right:20%;
+}
+
+form label{
+    font-family: "Alegreya";
+    color:white;
+    font-weight: bold;
+    font-size:1.5em;
+    text-align:center;
+}
+
+form br{
+    line-height: 2.5em;
+}
+
+input{
+    border-radius:3px;
+    border:none;
 }

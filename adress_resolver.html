@@ -4,17 +4,20 @@
     <head>
         <title> Adresse Resolver </title>
         <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Alegreya|Open+Sans" rel="stylesheet">
+
         <link rel="stylesheet" type="text/css" href="style.css"/>
     </head>
 
     <body>
-        <h1>Adress resolver</h1>
-        <a href="/help.html">Get Help !</a>
+        <div class="bandeau">
+            <h1>Adress resolver</h1>
+        </div>
+        <a href="/help.html" id="help">Get Help !</a>
 
-        <section id="adresse_resolver">
-            <form action="javascript:void(0)" method="post">
-                <label>Adresse :</label>
-                <input type="text" id="adresse1" placeholder="Ex : 0.0.0.0 | 0.0.0.0/24"/>
+            <form action="javascript:void(0)" method="post" id="adresse_resolver">
+                <label>Adresse</label><br/>
+                <input type="text" class="input_text" id="adresse1"/><br/>
                 <input type="submit" value="Solve it !" id="adresse1_submit"/>
             </form>
 
@@ -27,19 +30,16 @@
             <div id="adress_type"></div>
             <div id="adress_bit"></div>
             <div id="special_message"></div>
-        </section>
 
-        <section id="dump">
-            <form action="javascript:void(0)" method="post">
-                <label>Dump your adress here</label>
-                <input type="text" id="dump_adress" placeholder="0.0.0.0, 0.0.0.0/24, ..."/>
+            <form action="javascript:void(0)" method="post" id="dump">
+                <label>Dump your adress here</label><br/>
+                <input type="text" class="input_text" id="dump_adress"/><br/>
                 <input type="submit" value="Get the Dump" id="dump_button"/>
             </form>
 
             <div id="dump_area">
 
             </div>
-        </section>
 
         <script src="adress_resolver.js"></script>
     </body>
