@@ -27,27 +27,31 @@ h1{
     width:100%;
     color:white;
     box-shadow: -1px 1px 5px 1px #9E9E9E;
-    z-index:1;
+    z-index:2;
 }
 
 .bande_gauche{
-    position:absolute;
+    position:fixed;
     background-color:#1565C0;
-    top:80px;
+    top:0;
     left:0;
     width:15%;
-    height:100%;
+    min-height: 100%;
+    max-height:10000em;
     box-shadow:2px -1px 5px 1px #9E9E9E;
+    z-index: 1;
 }
 
 .bande_droite{
-    position:absolute;
+    position:fixed;
     background-color:#1565C0;
-    top:80px;
+    top:0;
     right:0;
     width:15%;
-    height:100%;
+    min-height: 100%;
+    max-height:10000em;
     box-shadow:-2px -1px 5px 1px #9E9E9E;
+    z-index: 1;
 }
 
 /* Get help button */
@@ -111,22 +115,34 @@ textarea{
     box-shadow: inset 0px 0px 3px 1px #757575;
     border-radius:4px;
     padding: 5px;
+    resize:none;
+    width:350px;
 }
 
 textarea:hover{
-
+    box-shadow: inset 0px 0px 5px 1px #757575;
 }
 
 textarea:focus{
-
+    outline:none;
+    box-shadow: inset 0px 0px 5px 1px #757575;
 }
 
-input{
+#dump_button{
     border-radius:3px;
     border:none;
     width:150px;
     height:50px;
     font-size: 1.25em;
+}
+
+#dump_button:hover{
+    box-shadow: 0px 1px 3px 1px #757575;
+}
+
+#dump_button:active{
+    box-shadow: inset 0px 1px 3px 1px #757575;
+    outline:none;
 }
 
 hr{
@@ -176,4 +192,12 @@ hr{
     left:+20%;
     margin-top:25px;
     width:50%
+}
+
+.adresse{
+    margin-left:4em;
+}
+
+.resultat{
+    margin-left:8em;
 }

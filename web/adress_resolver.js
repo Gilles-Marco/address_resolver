@@ -271,48 +271,52 @@ function sameNetwork(adresse1, adresse2){
 document.getElementById('dump_button').onclick = function(){
     /* reset de l'affichage s'il y a eu une autre demande avant */
     document.getElementById('dump_area').innerHTML = "";
-    var adresse = document.getElementById('dump_adress').value.split(',');
-    var groupe = [];
 
-    var color = ["Aqua", "Aquamarine", "Bisque", "Black", "Blue", "Brown", "BurlyWood", "BlueViolet", "Chocolate", "Chartreuse", "CadetBlue", "Coral", "CornflowerBlue", "Crimson", "Cyan", "DarkBlue", "DarkCyan", "DarkGoldenRod", "DarkGreen", "DarkKhaki", "DarkSalmon", "DarkSeaGreen", "DarkSlateBlue", "DeepPink", "FireBrick", "Gold", "Green", "GreenYellow", "IndianRed", "LawnGreen", "LighGreen", "LightSalmon", "LightPink", "Maroon", "Magenta", "MediumSeaGreen", "MediumSlateBlue", "MediumTurquoise", "MidnightBlue", "Olive", "OliveDrab", "Orange", "PaleVioletRed", "Red", "Purple", "SandyBrown", "Sienna", "YellowGreen"];
+    var adresse = document.getElementById('dump_adress').value;
+    if(adresse!=""){
+        var adresse = adresse.split(',');
+        var groupe = [];
 
-    /* On nettoie les adresses des espaces */
-    for(let i=0;i<adresse.length;i++){
-        adresse[i] = adresse[i].replace(" ", "");
-    }
+        var color = ["Aqua", "Aquamarine", "Bisque", "Black", "Blue", "Brown", "BurlyWood", "BlueViolet", "Chocolate", "Chartreuse", "CadetBlue", "Coral", "CornflowerBlue", "Crimson", "Cyan", "DarkBlue", "DarkCyan", "DarkGoldenRod", "DarkGreen", "DarkKhaki", "DarkSalmon", "DarkSeaGreen", "DarkSlateBlue", "DeepPink", "FireBrick", "Gold", "Green", "GreenYellow", "IndianRed", "LawnGreen", "LighGreen", "LightSalmon", "LightPink", "Maroon", "Magenta", "MediumSeaGreen", "MediumSlateBlue", "MediumTurquoise", "MidnightBlue", "Olive", "OliveDrab", "Orange", "PaleVioletRed", "Red", "Purple", "SandyBrown", "Sienna", "YellowGreen"];
 
-    /*
-        Calcul et groupe les adresses de même reseau ensemble
-    */
-    for(let i=0;i<adresse.length;i++){
-        var result = resolveAdress(adresse[i]);
-        var hasAGroup = false;
-        for(let j=0;j<groupe.length;j++){
-            if(groupe[j][0].adresse_reseau==result.adresse_reseau){
-                groupe[j].push(result);
-                hasAGroup = true;
-            }
+        /* On nettoie les adresses des espaces */
+        for(let i=0;i<adresse.length;i++){
+            adresse[i] = adresse[i].replace(" ", "");
         }
-        if(hasAGroup==false) groupe.push([result]);
-    }
-    /* 
-        Affiche les resultats
-    */
 
-    for(let i=0;i<groupe.length;i++){
-        let adresse_reseau = groupe[i][0].adresse_reseau;
-        document.getElementById('dump_area').innerHTML += "<div id='groupe"+i+"'><h2><font color='"+color[i]+"'>"+adresse_reseau+"</font></h2></div>";
-        for(let j=0;j<groupe[i].length;j++){
-            let adresse = `<h3 class="resultat">Adresse : ${groupe[i][j].adresse}</h3>`;
-            let adresse_reseauBuf = `<label class="resultat">Adresse réseau : ${adresse_reseau}</label>`;
-            let adresse_broadcast = `<label class="resultat">Adresse broadcast : ${groupe[i][j].adresse_broadcast}</label>`;
-            let adresse_bit = `<label class="resultat">Adresse binaire : ${groupe[i][j].adresse_bit}</label>`;
-            let masque = `<label class="resultat">Masque : ${groupe[i][j].masque}</label>`;
-            let plage= `<label class="resultat">Plage d'adresses [${groupe[i][j].plage1};${groupe[i][j].plage2}]</label>`;
-            let classe = `<label class="resultat">Classe : ${groupe[i][j].classe}</label>`;
-            let net_id = `<label class="resultat">Net-id : ${groupe[i][j].net_id}</label>`;
+        /*
+            Calcul et groupe les adresses de même reseau ensemble
+        */
+        for(let i=0;i<adresse.length;i++){
+            var result = resolveAdress(adresse[i]);
+            var hasAGroup = false;
+            for(let j=0;j<groupe.length;j++){
+                if(groupe[j][0].adresse_reseau==result.adresse_reseau){
+                    groupe[j].push(result);
+                    hasAGroup = true;
+                }
+            }
+            if(hasAGroup==false) groupe.push([result]);
+        }
+        /* 
+            Affiche les resultats
+        */
 
-            document.getElementById(`groupe${i}`).innerHTML += `${adresse}</br>${net_id}</br>${adresse_reseauBuf}</br>${adresse_broadcast}</br>${plage}</br>${masque}</br>${classe}</br>${adresse_bit}</br>`;
+        for(let i=0;i<groupe.length;i++){
+            let adresse_reseau = groupe[i][0].adresse_reseau;
+            document.getElementById('dump_area').innerHTML += "<div class='groupe' id='groupe"+i+"'><h2><font color='"+color[i]+"'>"+adresse_reseau+"</font></h2><br/></div>";
+            for(let j=0;j<groupe[i].length;j++){
+                let adresse = `<h3 class="adresse">Adresse : ${groupe[i][j].adresse}</h3>`;
+                let adresse_reseauBuf = `<label class="resultat">Adresse réseau : ${adresse_reseau}</label>`;
+                let adresse_broadcast = `<label class="resultat">Adresse broadcast : ${groupe[i][j].adresse_broadcast}</label>`;
+                let adresse_bit = `<label class="resultat">Adresse binaire : ${groupe[i][j].adresse_bit}</label>`;
+                let masque = `<label class="resultat">Masque : ${groupe[i][j].masque}</label>`;
+                let plage= `<label class="resultat">Plage d'adresses [${groupe[i][j].plage1};${groupe[i][j].plage2}]</label>`;
+                let classe = `<label class="resultat">Classe : ${groupe[i][j].classe}</label>`;
+                let net_id = `<label class="resultat">Net-id : ${groupe[i][j].net_id}</label>`;
+
+                document.getElementById(`groupe${i}`).innerHTML += `${adresse}</br>${net_id}</br>${adresse_reseauBuf}</br>${adresse_broadcast}</br>${plage}</br>${masque}</br>${classe}</br>${adresse_bit}</br><br/>`;
+            }
         }
     }
     
