@@ -5,6 +5,6 @@ app.use(express.static("web"));
 
 app.get("/", function(req, res){
     res.header(200);
-    res.sendFile(__dirname+"/adress_resolver.html");
+    res.sendFile(__dirname+"/web/adress_resolver.html");
 });
 http.listen(8080);
