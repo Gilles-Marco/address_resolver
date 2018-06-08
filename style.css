@@ -8,6 +8,7 @@
 body{
     margin: 0 auto;
     font-family : "Open Sans";
+    overflow:auto;
 }
 
 h1{
@@ -90,8 +91,8 @@ form{
 }
 
 #dump{
-    position:sticky;
-    left:20%;
+    position:relative;
+    left:+20%;
     z-index:2;
 }
 
@@ -129,9 +130,13 @@ input{
 }
 
 hr{
+    height:2.5px;
+    border-radius:100px;
+    background-color:#1565C0;
     width:65%;
     margin:0 auto;
     margin-top:25px;
+    border:none;
 }
 
 /* Comment to help the user */
@@ -162,4 +167,13 @@ hr{
     left:-120px;
     top:100px;
 
+}
+
+/* dump_area */
+
+#dump_area{
+    position:relative;
+    left:+20%;
+    margin-top:25px;
+    width:50%
 }
