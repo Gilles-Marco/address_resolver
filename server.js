@@ -20,6 +20,10 @@ app.get("/", function(req, res){
 .get('/help.css', function(req, res){
     res.header(200);
     res.sendFile(__dirname+"/help.css");
+})
+.get('/images/warning.svg', function(req, sys){
+    res.header(200);
+    res.sendFile(__dirname+"/images/warning.svg");
 });
 
 http.listen(8080);
