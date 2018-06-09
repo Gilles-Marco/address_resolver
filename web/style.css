@@ -208,13 +208,14 @@ hr{
     /* Modification de la position de textarea/bouton au milieu, alignement du commentaire entre le textarea et le bouton*/
     .comment_holder{
         position:absolute;
-        left:+40%;
+        margin:0 auto;
         top:180px;
     }
 
     #dump_button{
         position:sticky;
         margin-top:200px;
+        margin:0 auto;
     }
 }
 
