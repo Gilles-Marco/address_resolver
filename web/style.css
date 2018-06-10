@@ -158,10 +158,9 @@ hr{
 /* Comment to help the user */
 
 .comment_holder{
-    position:absolute;
-    right:30%;
-    top:6%;
+    position:relative;
     z-index:3;
+    font-size:1em;
 }
 
 .comment{
