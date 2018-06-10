@@ -158,7 +158,7 @@ hr{
 /* Comment to help the user */
 
 .comment_holder{
-    position:relative;
+    position:absolute;
     z-index:3;
     font-size:1em;
 }
