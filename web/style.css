@@ -161,6 +161,8 @@ hr{
     position:absolute;
     z-index:3;
     font-size:1em;
+    right:30%;
+    top:10%
 }
 
 .comment{
