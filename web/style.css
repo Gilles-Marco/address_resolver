@@ -161,7 +161,8 @@ hr{
     position:absolute;
     z-index:3;
     font-size:1em;
-    right:-40%;
+    right:-120%;
+    top:-30%;
 }
 
 .comment{
@@ -180,8 +181,8 @@ hr{
 
 .warning{
     position:relative;
-    left:-120px;
-    top:100px;
+    left:-250px;
+    top:+150px;
 
 }
 
