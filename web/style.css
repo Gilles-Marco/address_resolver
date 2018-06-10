@@ -206,16 +206,33 @@ hr{
 
 @media only screen and (max-width:1600px){
     /* Modification de la position de textarea/bouton au milieu, alignement du commentaire entre le textarea et le bouton*/
-    .comment_holder{
-        position:absolute;
+    #dump{
+        position:static;
         margin:0 auto;
-        top:180px;
+    }
+
+    .comment_holder{
+        position:relative;
+        top:-120px;
+        left:0px;
+    }
+
+    .comment{
+        font-family: "Gloria Hallelujah";
+        font-style:italic;
+        font-weight: none;
+        color:#9E9E9E;
+    }
+
+    .warning{
+        position:relative;
+        left:-250px;
+        top:+150px;
     }
 
     #dump_button{
-        position:sticky;
-        margin-top:200px;
-        margin:0 auto;
+        position:relative;
+        top:-100px;
     }
 }
 

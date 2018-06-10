@@ -20,15 +20,16 @@
         <form action="javascript:void(0)" method="post" id="dump">
             <label>Dump your adress here</label><br/>
             <textarea class="input_text" id="dump_adress" autofocus required rows="5" cols="40"/></textarea><br/>
+            <div class="comment_holder">
+                <img class="warning" src="images/warning.svg" height="100px" width="auto"/><br/>
+                <label class="comment" id="normal"> : 192.168.0.0</label><br/>
+                <label class="comment" id="withNetid"> : 192.168.0.0/24</label><br/>
+                <label class="comment">Separate adress with comma</label>
+            </div>
             <input type="submit" value="Get the Dump" id="dump_button"/>
         </form>
 
-        <div class="comment_holder">
-            <img class="warning" src="images/warning.svg" height="100px" width="auto"/><br/>
-            <label class="comment" id="normal"> : 192.168.0.0</label><br/>
-            <label class="comment" id="withNetid"> : 192.168.0.0/24</label><br/>
-            <label class="comment">Separate adress with comma</label>
-        </div>
+        
 
         <hr/>
 
