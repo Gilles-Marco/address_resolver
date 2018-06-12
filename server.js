@@ -9,7 +9,7 @@ app.get("/", function(req, res){
     res.header(200);
     res.sendFile(__dirname+"/web/adress_resolver.html");
     var ip = req.connection.remoteAddress.substr(7);
-    fs.appendFile('log.txt', `${ip} :  Connexion`);
+    fs.appendFile('log.txt', `${ip} :  Connexion\n`);
 });
 
 http.listen(8080);
