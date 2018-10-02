@@ -41,7 +41,7 @@ function convertAdressToBit(adressSplitInArray){
 }
 
 function bitAdressToDecimal(bitAdress){
-    /*Prend un nombre decimal en entrée et le retourne sous forme hexadecimal en decimal */
+    /*Prend une adresse en binaire et la retourne sous forme d'une adresse décimal */
     var adress = "";
     var octet = "";
     
